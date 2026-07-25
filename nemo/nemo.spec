@@ -6,7 +6,7 @@ Version:        6.7.4^unstable
 Release:        3%{?dist}
 License:        GPL-2.0-or-later AND LGPL-2.0-or-later AND LGPL-2.1-or-later
 URL:            https://github.com/linuxmint/%{name}
-Source0:        %url/archive/%{upstream_version}/%{name}-%{upstream_version}.tar.gz
+Source0:        https://github.com/linuxmint/nemo/archive/%{upstream_version}/%{name}-%{upstream_version}.tar.gz
 Source1:        nemo-fedora.gschema.override
 
 ExcludeArch:   %{ix86}
