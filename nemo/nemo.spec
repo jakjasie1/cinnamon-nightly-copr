@@ -1,12 +1,12 @@
-%global upstream_version 6.7.4-unstable
+%global upstream_version 6.6.4
 
 Name:           nemo
 Summary:        File manager for Cinnamon
-Version:        6.7.4^unstable
+Version:        6.6.4
 Release:        3%{?dist}
 License:        GPL-2.0-or-later AND LGPL-2.0-or-later AND LGPL-2.1-or-later
 URL:            https://github.com/linuxmint/%{name}
-Source0:        https://github.com/linuxmint/nemo/archive/refs/tags/6.7.4-unstable.tar.gz
+Source0:        https://github.com/linuxmint/nemo/archive/refs/tags/{upstream-version}.tar.gz
 Source1:        nemo-fedora.gschema.override
 
 ExcludeArch:   %{ix86}
