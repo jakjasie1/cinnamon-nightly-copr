@@ -1,12 +1,12 @@
+%global upstream_version 6.7.4-unstable
 %global commit          932438fc4767c1d95fe6677edcd3d13d7b2ffa24
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:   	nemo
-Version:	1.0.0^14.%{shortcommit}
-Release:	1%{?dist}
-Summary:	A minimal login greeter for greetd that matches the look and feel of Noctalia Shell.
-
-License:	MIT
+Version:	6.7.4^%{shortcommit}
+Release:	3%{?dist}
+Summary:	File manager for Cinnamon
+License:	GPL-2.0-or-later AND LGPL-2.0-or-later AND LGPL-2.1-or-later
 URL:		https://github.com/linuxmint/%{name}
 Source0:	%{url}/archive/%{commit}/%{name}-%{commit}.tar.gz
 
