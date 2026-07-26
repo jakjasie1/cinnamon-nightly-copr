@@ -8,7 +8,6 @@ Release:        3%{?dist}
 License:        GPL-2.0-or-later AND LGPL-2.0-or-later AND LGPL-2.1-or-later
 URL:            https://github.com/linuxmint/%{name}
 Source0:        %{url}/archive/%{commit}/%{name}-%{commit}.tar.gz
-Source1:        nemo-fedora.gschema.override
 
 ExcludeArch:   %{ix86}
 
