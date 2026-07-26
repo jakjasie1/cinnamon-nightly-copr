@@ -7,7 +7,7 @@ Version:        6.7.4^unstable
 Release:        3%{?dist}
 License:        GPL-2.0-or-later AND LGPL-2.0-or-later AND LGPL-2.1-or-later
 URL:            https://github.com/linuxmint/%{name}
-Source0:        %{url}/archive/%{commit}/%{name}-%{commit}.tar.gz
+Source0:        https://github.com/linuxmint/nemo/archive/932438fc4767c1d95fe6677edcd3d13d7b2ffa24/nemo-932438fc4767c1d95fe6677edcd3d13d7b2ffa24.tar.gz
 
 ExcludeArch:   %{ix86}
 
