@@ -1,22 +1,25 @@
 %global upstream_version 6.7.4-unstable
-%global commit 932438fc4767c1d95fe6677edcd3d13d7b2ffa24
-%global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           nemo
 Summary:        File manager for Cinnamon
-Version:        6.7.4^%{shortcommit}
+Version:        6.7.4^unstable
 Release:        3%{?dist}
 License:        GPL-2.0-or-later AND LGPL-2.0-or-later AND LGPL-2.1-or-later
-URL:		https://github.com/linuxmint/%{name}
-Source0:	%{url}/archive/%{commit}/%{name}-%{commit}.tar.gz
+URL:            https://github.com/linuxmint/%{name}
+Source0:        %url/archive/%{upstream_version}/%{name}-%{upstream_version}.tar.gz
+Source1:        nemo-fedora.gschema.override
 
 ExcludeArch:   %{ix86}
 
 Requires:       redhat-menus
 Requires:       gvfs-fuse%{?_isa}
-Requires:       gvfs-goa%{?_isa}
+Recommends:     gvfs-goa%{?_isa}
 Requires:       xapps%{?_isa} >= 2.2.0
-# required for for gtk-stock fallback
+# required by nemo-action-layout-editor
+Requires:       libxmlb%{?_isa}
+Requires:       python3-cairo
+Requires:       python3-gobject
+# required for gtk-stock fallback
 Recommends:     xapp-symbolic-icons
 Recommends:     cinnamon-translations >= 6.7.0
 Recommends:     nemo-search-helpers
@@ -40,7 +43,6 @@ BuildRequires:  pkgconfig(gtk-layer-shell-0)
 BuildRequires:  pkgconfig(json-glib-1.0)
 BuildRequires:  pkgconfig(cinnamon-desktop) >= 6.7.0
 BuildRequires:  pkgconfig(gail-3.0)
-BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xapp) >= 2.2.0
 BuildRequires:  pkgconfig(exempi-2.0)
@@ -63,7 +65,6 @@ It is also responsible for handling the icons on the Cinnamon desktop.
 %package extensions
 Summary: Nemo extensions library
 License:    LGPL-2.0-or-later
-Requires:   %{name}%{?_isa} = %{version}-%{release}
 
 %description extensions
 This package provides the libraries used by nemo extensions.
@@ -74,9 +75,10 @@ License:    GPL-2.0-or-later
 Requires:   %{name}%{?_isa} = %{version}-%{release}
 Requires:   exif
 Requires:   ghostscript
-Requires:   odt2txt
 Requires:   poppler-utils
 Requires:   python3-xlrd
+Recommends: catdoc
+Recommends: unzip
 
 %description search-helpers
 This package provides the search helpers used by nemo.
@@ -94,7 +96,7 @@ This package provides libraries and header files needed
 for developing nemo extensions.
 
 %prep
-%autosetup -p1 -n %{name}-%{commit}
+%autosetup -p1 -n %{name}-%{upstream_version}
 
 %build
 %meson \
@@ -118,13 +120,14 @@ desktop-file-install --delete-original \
   --dir %{buildroot}%{_datadir}/applications \
   %{buildroot}%{_datadir}/applications/{nemo,nemo-autorun-software}.desktop
 
-# create extensions directoy
+# create extensions directory
 mkdir -p %{buildroot}%{_libdir}/nemo/extensions-3.0/
 
 rm %{buildroot}%{_datadir}/nemo/search-helpers/id3.nemo_search_helper
 rm %{buildroot}%{_datadir}/nemo/search-helpers/pdf2txt.nemo_search_helper
 
-%ldconfig_scriptlets extensions
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 
 %files
 %doc AUTHORS NEWS
@@ -233,7 +236,7 @@ rm %{buildroot}%{_datadir}/nemo/search-helpers/pdf2txt.nemo_search_helper
 - Update to 6.4.3
 
 * Mon Dec 02 2024 Leigh Scott <leigh123linux@gmail.com> - 6.4.1-1
-- Update t0 6.4.1
+- Update to 6.4.1
 
 * Wed Nov 27 2024 Leigh Scott <leigh123linux@gmail.com> - 6.4.0-1
 - Update to 6.4.0
