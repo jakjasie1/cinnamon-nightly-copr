@@ -8,7 +8,7 @@ Summary:        Common files for XApp desktop apps
 License:        LGPL-3.0-only
 URL:            https://github.com/linuxmint/%{name}
 Source0:        %{url}/archive/%{upstream_version}/%{name}-%{upstream_version}.tar.gz
-Source1:        http://packages.linuxmint.com/pool/main/f/flags/flags_1.0.4.tar.xz
+Source1:        https://fastly.linuxmint.io/pool/main/f/flags/flags_1.0.4.tar.xz
 Patch0:         watcher_fix_libexec.patch
 
 ExcludeArch:    %{ix86}
