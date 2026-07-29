@@ -5,7 +5,7 @@
 
 Name:           nemo
 Summary:        File manager for Cinnamon
-Version:        6.7.4^unstable
+Version:        6.7.4^unstable.%{shortcommit}
 Release:        3%{?dist}
 License:        GPL-2.0-or-later AND LGPL-2.0-or-later AND LGPL-2.1-or-later
 URL:            https://github.com/linuxmint/%{name}
