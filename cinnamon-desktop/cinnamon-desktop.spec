@@ -3,6 +3,8 @@
 %global po_package       cinnamon-desktop-3.0
 
 %global upstream_version 6.7.2-unstable
+%global commit          934d693ca8336271fc321f30f0b93f7029255129
+%global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Summary: Shared code among cinnamon-session, nemo, etc
 Name:    cinnamon-desktop
@@ -10,7 +12,7 @@ Version: 6.7.2^unstable
 Release: 2%{?dist}
 License: GPL-2.0-or-later AND LGPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND MIT
 URL:     https://github.com/linuxmint/%{name}
-Source0: %url/archive/%{upstream_version}/%{name}-%{upstream_version}.tar.gz
+Source0: %{url}/archive/%{commit}/%{name}-%{commit}.tar.gz
 Source1: x-cinnamon-mimeapps.list
 
 ExcludeArch: %{ix86}
@@ -59,7 +61,7 @@ Libraries and header files for the CINNAMON-internal private library
 libcinnamon-desktop.
 
 %prep
-%autosetup -p1 -n %{name}-%{upstream_version}
+%autosetup -p1 -n %{name}-%{commit}
 
 %build
 %meson \
