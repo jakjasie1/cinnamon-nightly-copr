@@ -7,7 +7,7 @@
 
 %global upstream_version 6.7.2-unstable
 %global commit          932438fc4767c1d95fe6677edcd3d13d7b2ffa24
-%global shortcommit     %(c=%{commit}; echo ${c:0:7}
+%global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Summary: Utilities to configure the Cinnamon desktop
 Name:    cinnamon-control-center
