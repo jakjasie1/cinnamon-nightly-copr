@@ -22,7 +22,7 @@ Translations for Cinnamon, Nemo and Mintlocale.
 
 
 %prep
-%autosetup -p1 -n %{name}-%{upstream_version}
+%autosetup -p1 -a1 -n %{name}-%{upstream_version}
 
 
 %build
