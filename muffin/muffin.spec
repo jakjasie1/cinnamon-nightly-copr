@@ -1,13 +1,15 @@
 %global upstream_version 6.7.4-unstable
+%global commit          97e20ecf2ff8855fec39cdf005193b12e78a800a
+%global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:          muffin
-Version:       6.7.4^unstable
-Release:       2%{?dist}
+Version:       6.7.4^unstable.%{shortcommit}
+Release:       3%{?dist}
 Summary:       Window and compositing manager based on Clutter
 
 License:       GPL-2.0-or-later AND LGPL-2.0-or-later AND MIT AND SGI-B-2.0
 URL:           https://github.com/linuxmint/%{name}
-Source0:       %url/archive/%{upstream_version}/%{name}-%{upstream_version}.tar.gz
+Source0:       %{url}/archive/%{commit}/%{name}-%{commit}.tar.gz
 
 ExcludeArch:   %{ix86}
 
@@ -96,7 +98,7 @@ Header files and libraries for developing Muffin plugins. Also includes
 utilities for testing Metacity/Muffin themes.
 
 %prep
-%autosetup -p1 -n %{name}-%{upstream_version}
+%autosetup -a1 -p1 -n %{name}-%{commit}
 
 %build
 %meson

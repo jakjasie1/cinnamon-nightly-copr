@@ -1,15 +1,17 @@
 %global cinnamon_desktop_version 6.7.0
 
 %global upstream_version 6.7.2-unstable
+%global commit          18bb726dc21ac7127f50e7b2c9c3885d66dd34b6
+%global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           cinnamon-settings-daemon
-Version:        6.7.2^unstable
+Version:        6.7.2^unstable.%{shortcommit}
 Release:        2%{?dist}
 Summary:        The daemon sharing settings from CINNAMON to GTK+/KDE applications
 
 License:        GPL-2.0-or-later AND LGPL-2.0-or-later AND LGPL-2.1-only AND LGPL-2.1-or-later AND MIT
 URL:            https://github.com/linuxmint/%{name}
-Source0:        %url/archive/%{upstream_version}/%{name}-%{upstream_version}.tar.gz
+Source0:        %{url}/archive/%{commit}/%{name}-%{commit}.tar.gz
 
 ExcludeArch:    %{ix86}
 
@@ -54,8 +56,7 @@ A daemon to share settings from CINNAMON to other applications. It also
 handles global keybindings, and many of desktop-wide settings.
 
 %prep
-%autosetup -p1 -n %{name}-%{upstream_version}
-
+%autosetup -a1 -p1 -n %{name}-%{commit}
 %build
 %meson \
  -Duse_smartcard=disabled \

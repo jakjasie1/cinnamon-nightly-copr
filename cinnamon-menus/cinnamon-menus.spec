@@ -1,12 +1,14 @@
 %global upstream_version 6.7.0-unstable
+%global commit          1142b5fb313b486f93d7edd1035301a48cc8b4a2
+%global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Summary: A menu system for the Cinnamon project
 Name:    cinnamon-menus
-Version: 6.7.0^unstable
+Version: 6.7.0^unstable..%{shortcommit}
 Release: 2%{?dist}
 License: LGPL-2.0-or-later
 URL:     https://github.com/linuxmint/%{name}
-Source0: %url/archive/%{upstream_version}/%{name}-%{upstream_version}.tar.gz
+Source0: %{url}/archive/%{commit}/%{name}-%{commit}.tar.gz
 
 ExcludeArch:   %{ix86}
 
@@ -32,7 +34,7 @@ This package provides the necessary development libraries for
 writing applications that use the Cinnamon menu system.
 
 %prep
-%autosetup -p1 -n %{name}-%{upstream_version}
+%autosetup -a1 -p1 -n %{name}-%{commit}
 
 %build
 %meson \

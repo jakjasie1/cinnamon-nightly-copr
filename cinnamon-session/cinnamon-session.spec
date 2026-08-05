@@ -1,14 +1,16 @@
 %global cinnamon_desktop_version 6.7.1
 
 %global upstream_version 6.7.3-unstable
+%global commit          824fdcd1e4f9e8e30a89b2f06c55fff18d4962e7
+%global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Summary: Cinnamon session manager
 Name:    cinnamon-session
-Version: 6.7.3^unstable
+Version: 6.7.3^unstable.%{shortcommit}
 Release: 2%{?dist}
 License: GPL-2.0-or-later AND LGPL-2.0-or-later
 URL:     https://github.com/linuxmint/%{name}
-Source0: %url/archive/%{upstream_version}/%{name}-%{upstream_version}.tar.gz
+Source0:  %{url}/archive/%{commit}/%{name}-%{commit}.tar.gz
 
 ExcludeArch: %{ix86}
 
@@ -50,7 +52,7 @@ Cinnamon-session manages a Cinnamon desktop or GDM login session. It starts up
 the other core components and handles logout and saving the session.
 
 %prep
-%autosetup -p1 -n %{name}-%{upstream_version}
+%autosetup -a1 -p1 -n %{name}-%{commit}
 
 %build
 %meson

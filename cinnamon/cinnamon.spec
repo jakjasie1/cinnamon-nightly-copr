@@ -10,14 +10,16 @@
 %global __python %{__python3}
 
 %global upstream_version 6.7.4-unstable
+%global commit          cdfd15f6e3f9a4dd3a91d16143f8774a2f113c27
+%global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           cinnamon
-Version:        6.7.4^unstable
-Release:        2%{?dist}
+Version:        6.7.4^unstable.%{shortcommit}
+Release:        3%{?dist}
 Summary:        Window management and application launching for GNOME
 License:        GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.0-or-later AND LGPL-2.1-only AND LGPL-2.1-or-later AND MIT
 URL:            https://github.com/linuxmint/%{name}
-Source0:        %url/archive/%{upstream_version}/%{name}-%{upstream_version}.tar.gz
+Source0:        %{url}/archive/%{commit}/%{name}-%{commit}.tar.gz
 Source1:        10_cinnamon-common.gschema.override
 Source2:        10_cinnamon-apps.gschema.override.in
 Source3:        22_fedora.styles
@@ -210,7 +212,7 @@ Requires:       gnome-calendar%{?_isa}
 Calendar server for Cinnamon.
 
 %prep
-%autosetup -p1 -n %{name}-%{upstream_version}
+%autosetup -a1 -p1 -n %{name}-%{commit}
 
 %{__sed} -i -e 's@gksu@pkexec@g' files%{_bindir}/%{name}-settings-users
 %{__sed} -i -e 's@gnome-orca@orca@g' files%{_datadir}/%{name}/%{name}-settings/modules/cs_accessibility.py

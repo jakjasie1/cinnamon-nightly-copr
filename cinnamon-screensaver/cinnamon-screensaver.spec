@@ -1,12 +1,15 @@
 %global upstream_version 6.7.1-unstable
+%global commit          ef4edcb317f363a9bd26844c05748a22528132fd
+%global shortcommit     %(c=%{commit}; echo ${c:0:7})
+
 
 Summary: Cinnamon Screensaver
 Name:    cinnamon-screensaver
-Version: 6.7.1^unstable
+Version: 6.7.1^unstable.%{shortcommit}
 Release: 2%{?dist}
 License: GPL-2.0-or-later AND LGPL-2.0-or-later AND MIT
 URL:     https://github.com/linuxmint/%{name}
-Source0: %url/archive/%{upstream_version}/%{name}-%{upstream_version}.tar.gz
+Source0: %{url}/archive/%{commit}/%{name}-%{commit}.tar.gz
 
 ExcludeArch: %{ix86}
 
@@ -45,10 +48,10 @@ Requires: xprop
 Requires: gnome-keyring-pam%{?_isa}
 
 %description
-cinnamon-screensaver is a screen saver and locker.
+Cinnamon-screensaver is a screen saver and locker.
 
 %prep
-%autosetup -p1 -n %{name}-%{upstream_version}
+%autosetup -a1 -p1 -n %{name}-%{commit}
 
 %build
 %meson

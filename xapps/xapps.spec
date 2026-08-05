@@ -1,13 +1,15 @@
 %global upstream_version 3.3.3-unstable
+%global commit          94a348f16ec3a483fdb6c8a807a6de5f7f613c10
+%global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Name:           xapps
-Version:        3.3.3^unstable
-Release:        3%{?dist}
+Version:        3.3.3^unstable.%{shortcommit}
+Release:        4%{?dist}
 Summary:        Common files for XApp desktop apps
 
 License:        LGPL-3.0-only
 URL:            https://github.com/linuxmint/%{name}
-Source0:        %{url}/archive/%{upstream_version}/%{name}-%{upstream_version}.tar.gz
+Source0:        %{url}/archive/%{commit}/%{name}-%{commit}.tar.gz
 Source1:        https://fastly.linuxmint.io/pool/main/f/flags/flags_1.0.4.tar.xz
 Patch0:         watcher_fix_libexec.patch
 
@@ -67,7 +69,7 @@ Provides:       python3-xapps-overrides%{?_isa} = %{version}-%{release}
 Python%{python3_version} files for XApp apps.
 
 %prep
-%autosetup -p1 -n xapp-%{upstream_version}
+%autosetup -p1 -n xapp-%{commit}
 
 %build
 %meson \

@@ -3,15 +3,19 @@
 %global gtk3_version 3.20
 %global mozjs140_version 140.6.0
 
+%global commit          991f7b261d0e7e7d15cf975858b2a0f1eec940b4
+%global shortcommit     %(c=%{commit}; echo ${c:0:7})
+
+
 Name:          cjs
 Epoch:         1
-Version:       140.0
-Release:       2%{?dist}
+Version:       140.0.%{shortcommit}
+Release:       3%{?dist}
 Summary:       Javascript Bindings for Cinnamon
 
 License:       MIT AND BSD-3-Clause AND MPL-2.0 AND CC-BY-3.0 AND (MIT OR LGPL-2.0-or-later) AND (MPL-1.1 OR GPL-2.0-or-later OR LGPL-2.1-or-later)
 URL:           https://github.com/linuxmint/%{name}
-Source0:       %{url}/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:       %{url}/archive/%{commit}/%{name}-%{commit}.tar.gz
 
 ExcludeArch:   %{ix86}
 
@@ -64,7 +68,7 @@ the functionality of the installed cjs package.
 
 
 %prep
-%autosetup -p1
+%autosetup -a1 -p1 -n %{name}-%{commit}
 
 %build
 %meson
