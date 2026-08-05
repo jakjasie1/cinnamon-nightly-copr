@@ -6,7 +6,7 @@
 %global redhat_menus_version 1.8
 
 %global upstream_version 6.7.2-unstable
-%global commit          acbe1b999a54d5d483f3b851d4f6be40e754d4e7
+%global commit          fe9b8002bc23e25f8748cef16a13f44d26ce89d5
 %global shortcommit     %(c=%{commit}; echo ${c:0:7})
 
 Summary: Utilities to configure the Cinnamon desktop

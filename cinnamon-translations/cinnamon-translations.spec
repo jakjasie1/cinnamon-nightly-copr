@@ -1,6 +1,7 @@
-%global _trans_version 2018.12.11
+%global _trans_version 2026.01.08
 
 %global upstream_version 6.7.0-unstable
+
 
 Name:           cinnamon-translations
 Version:        6.7.0^unstable
@@ -21,7 +22,7 @@ Translations for Cinnamon, Nemo and Mintlocale.
 
 
 %prep
-%autosetup -p1 -n %{name}-%{commit}
+%autosetup -p1 -n %{name}-%{upstream_version}
 
 
 %build
