@@ -10,7 +10,7 @@ Summary:        Translations for Cinnamon and Nemo
 License:        GPL-2.0-or-later
 URL:            https://github.com/linuxmint/%{name}
 Source0:        %url/archive/%{upstream_version}/%{name}-%{upstream_version}.tar.gz
-Source1:        http://packages.linuxmint.com/pool/main/m/mint-translations/mint-translations_%{_trans_version}.tar.xz
+Source1:     https://fastly.linuxmint.io/pool/main/m/mint-translations/mint-translations_%{_trans_version}.tar.xz
 BuildRequires:  gettext
 BuildRequires:  make
 
