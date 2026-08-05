@@ -4,7 +4,7 @@
 
 Summary: A menu system for the Cinnamon project
 Name:    cinnamon-menus
-Version: 6.7.0^unstable..%{shortcommit}
+Version: 6.7.0^unstable.%{shortcommit}
 Release: 2%{?dist}
 License: LGPL-2.0-or-later
 URL:     https://github.com/linuxmint/%{name}
