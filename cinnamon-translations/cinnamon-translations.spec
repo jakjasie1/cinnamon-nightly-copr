@@ -3,8 +3,8 @@
 %global upstream_version 6.7.0-unstable
 
 Name:           cinnamon-translations
-Version:        6.7.0^unstable
-Release:        2%{?dist}
+Version:        6.7.0^unstable.20260108
+Release:        3%{?dist}
 Summary:        Translations for Cinnamon and Nemo
 
 License:        GPL-2.0-or-later

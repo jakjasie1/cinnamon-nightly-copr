@@ -6,7 +6,7 @@
 Summary: Cinnamon Screensaver
 Name:    cinnamon-screensaver
 Version: 6.7.1^unstable.%{shortcommit}
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: GPL-2.0-or-later AND LGPL-2.0-or-later AND MIT
 URL:     https://github.com/linuxmint/%{name}
 Source0: %{url}/archive/%{commit}/%{name}-%{commit}.tar.gz

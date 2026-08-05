@@ -8,8 +8,8 @@
 
 Summary: Shared code among cinnamon-session, nemo, etc
 Name:    cinnamon-desktop
-Version: 6.7.2^unstable.%{commit}
-Release: 2%{?dist}
+Version: 6.7.2^unstable.%{shortcommit}
+Release: 3%{?dist}
 License: GPL-2.0-or-later AND LGPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND MIT
 URL:     https://github.com/linuxmint/%{name}
 Source0: %{url}/archive/%{commit}/%{name}-%{commit}.tar.gz

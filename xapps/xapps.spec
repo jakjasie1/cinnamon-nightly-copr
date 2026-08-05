@@ -4,7 +4,7 @@
 
 Name:           xapps
 Version:        3.3.3^unstable.%{shortcommit}
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Common files for XApp desktop apps
 
 License:        LGPL-3.0-only
