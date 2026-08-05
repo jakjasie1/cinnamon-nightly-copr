@@ -2,7 +2,6 @@
 
 %global upstream_version 6.7.0-unstable
 
-
 Name:           cinnamon-translations
 Version:        6.7.0^unstable
 Release:        2%{?dist}
@@ -11,7 +10,7 @@ Summary:        Translations for Cinnamon and Nemo
 License:        GPL-2.0-or-later
 URL:            https://github.com/linuxmint/%{name}
 Source0:        %url/archive/%{upstream_version}/%{name}-%{upstream_version}.tar.gz
-Source1:        https://fastly.linuxmint.io/pool/main/m/mint-translations/mint-translations_%{_trans_version}.tar.xz
+Source1:        http://packages.linuxmint.com/pool/main/m/mint-translations/mint-translations_%{_trans_version}.tar.xz
 BuildRequires:  gettext
 BuildRequires:  make
 
@@ -22,12 +21,12 @@ Translations for Cinnamon, Nemo and Mintlocale.
 
 
 %prep
-%autosetup -p1 -a1 -n %{name}-%{upstream_version}
+%autosetup -a1 -p1 -n %{name}-%{upstream_version}
 
 
 %build
 %{make_build}
-%{make_build} -C mint-translations_%{_trans_version}
+%{make_build} -C mint-translations
 
 
 %install
@@ -87,7 +86,7 @@ Translations for Cinnamon, Nemo and Mintlocale.
 * Tue Nov 26 2024 Leigh Scott <leigh123linux@gmail.com> - 6.4.0-1
 - Update to 6.4.0
 
-* Thu Jul 25 2024 Miroslav Suchý <msuchy@redhat.com> - 6.2.2-2
+* Thu Jul 25 2024 Miroslav SuchÃ½ <msuchy@redhat.com> - 6.2.2-2
 - convert license to SPDX
 
 * Sun Jul 21 2024 Leigh Scott <leigh123linux@gmail.com> - 6.2.2-1
