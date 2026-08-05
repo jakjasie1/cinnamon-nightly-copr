@@ -27,7 +27,7 @@ Translations for Cinnamon, Nemo and Mintlocale.
 
 %build
 %{make_build}
-%{make_build} -C mint-translations
+%{make_build} -C mint-translations_%{_trans_version}
 
 
 %install
