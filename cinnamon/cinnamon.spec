@@ -212,7 +212,7 @@ Requires:       gnome-calendar%{?_isa}
 Calendar server for Cinnamon.
 
 %prep
-%autosetup -a1 -p1 -n %{name}-%{commit}
+%autosetup -p1 -n %{name}-%{commit}
 
 %{__sed} -i -e 's@gksu@pkexec@g' files%{_bindir}/%{name}-settings-users
 %{__sed} -i -e 's@gnome-orca@orca@g' files%{_datadir}/%{name}/%{name}-settings/modules/cs_accessibility.py

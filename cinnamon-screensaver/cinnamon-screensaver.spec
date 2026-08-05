@@ -51,7 +51,7 @@ Requires: gnome-keyring-pam%{?_isa}
 Cinnamon-screensaver is a screen saver and locker.
 
 %prep
-%autosetup -a1 -p1 -n %{name}-%{commit}
+%autosetup -p1 -n %{name}-%{commit}
 
 %build
 %meson

@@ -68,7 +68,7 @@ the functionality of the installed cjs package.
 
 
 %prep
-%autosetup -a1 -p1 -n %{name}-%{commit}
+%autosetup -p1 -n %{name}-%{commit}
 
 %build
 %meson

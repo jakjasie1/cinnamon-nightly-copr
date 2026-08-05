@@ -52,7 +52,7 @@ Cinnamon-session manages a Cinnamon desktop or GDM login session. It starts up
 the other core components and handles logout and saving the session.
 
 %prep
-%autosetup -a1 -p1 -n %{name}-%{commit}
+%autosetup -p1 -n %{name}-%{commit}
 
 %build
 %meson

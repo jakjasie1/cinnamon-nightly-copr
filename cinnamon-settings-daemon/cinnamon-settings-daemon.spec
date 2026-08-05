@@ -56,7 +56,7 @@ A daemon to share settings from CINNAMON to other applications. It also
 handles global keybindings, and many of desktop-wide settings.
 
 %prep
-%autosetup -a1 -p1 -n %{name}-%{commit}
+%autosetup -p1 -n %{name}-%{commit}
 %build
 %meson \
  -Duse_smartcard=disabled \
